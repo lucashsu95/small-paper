@@ -30,7 +30,7 @@ function show_progress_bar() {
 function show() {
     window.onscroll = () => {
         var stop = document.documentElement.scrollTop;
-        console.log(stop);
+        // console.log(stop);
         if (stop < 200) {
             var old_value = document.querySelector('.active');
             var new_value = document.querySelector('.line-first');

@@ -8,7 +8,9 @@
 body {
     display: flex;
     flex-direction: column;
-    background-color: #333;
+    background-color: #1e1f2e;
+
+
     color: #fff;
     font-family: 新細明體;
 }
@@ -17,6 +19,7 @@ nav,
 footer {
     font-family: 微軟正黑體;
     list-style: none;
+    z-index: 2;
 
 }
 
@@ -31,8 +34,8 @@ nav {
 
     padding: 2%;
     font-size: 22px;
-    background-color: rgb(9, 9, 30);
-    z-index: 2;
+    background-color: #070720;
+    right:0;
 }
 
 .nav-left img {
@@ -100,8 +103,9 @@ nav {
 /* -------------------main------------------ */
 
 main {
-    width: 100%;
-    min-height: 800px;
+    width: 60%;
+    display: flex;
+    margin:auto;
 }
 
 /* ------------------(1)------------------ */
@@ -113,21 +117,23 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    border:1px solid #39f;
+    border-radius: 5px;
     z-index: 1;
 }
 
 /* ------------------(2)------------------ */
 
 main article:nth-child(2) {
-    width: 60%;
+    width: 80%;
     height: 100%;
-
+    
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    margin: auto;
-    background: #333;
+    
+    margin-left:40%;
+        
 }
 
 #line-first,
@@ -145,18 +151,29 @@ main article:nth-child(2) section {
     padding: 0 12%;
     margin-bottom: 100px;
 
-    font-size: 18px;
     line-height: 200%;
     letter-spacing: 2px;
 
     font-family: Arial, 新細明體, sans-serif;
 }
-
-main article:nth-child(2) h1 {
+h1{
+    font-family: 微軟正黑體;
+    font-size: 28px;
+    margin:20px;
+    color: #fc0e;
+}
+h2{
     font-family: 微軟正黑體;
     color: #fd5e;
 }
+h3{
+    font-family: 微軟正黑體;
+    color: #feae;
 
+}
+p{
+    text-indent: 2rem;
+}
 /* ------------------(3)------------------ */
 
 main article:nth-child(3) {
@@ -193,7 +210,7 @@ footer {
 /* ------------------progress-bar-left------------------ */
 
 .progress-bar-left {
-    width: 50%;
+    width:65%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -214,12 +231,12 @@ footer {
 .progress-bar-left a {
     letter-spacing: 3px;
     color: #fd5e;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 /* -----------------progress-bar-right------------------- */
 .progress-bar-right {
-    width: 50%;
+    width: 35%;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -260,7 +277,7 @@ footer {
 .progress-bar-right a {
     color: #fff;
     font-weight: 900;
-    font-size: 28px;
+    font-size: 24px;
 }
 
 .progress-bar-right li.active {
@@ -289,7 +306,17 @@ hr {
 .progress-bar-btn {
     display: none;
 }
+img{
+    border-radius: 6px;
+}
+.line-img{
+    width:500px;
+}
 
+.p-img{
+    float: right;
+    width: 150px;
+}
 @media(max-width:900px) {
     nav {
         font-size: 18px;
@@ -305,6 +332,7 @@ hr {
         /* transform: rotate(90deg) scaleY(4) scaleX(3) translateX(0px); */
         display: inline-block;
     }
+    
 
     #hidden-menu {
         transform: scale(0);
@@ -312,4 +340,14 @@ hr {
         transform-origin: top;
         transition: transform 300ms;
     }
+    main{
+        width:100%;
+    }
+main article:nth-child(2) {
+    margin:auto;
+
+}
+.footer-content{
+    flex-direction: column;
+}
 }
