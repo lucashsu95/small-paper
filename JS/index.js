@@ -1,7 +1,6 @@
-var elements = document.getElementsByClassName("none");
 
 // for (var i = 0; i < elements.length; i++) {
-//     elements[i].addEventListener('click', myFunction);
+    //     elements[i].addEventListener('click', myFunction);
 // }
 // function myFunction() {
 //     var old_value = document.querySelector('.active');
@@ -11,6 +10,7 @@ var elements = document.getElementsByClassName("none");
 //     // console.log(elements);
 // }
 
+var elements = document.getElementsByClassName("none");
 var progress_bar_btn = document.querySelector('.progress-bar-btn')
 progress_bar_btn.style.transform = 'rotate(90deg) scaleY(4) scaleX(3) translateY(0px)';
 var hidden_menu = document.getElementById('hidden-menu');
