@@ -1,15 +1,4 @@
-
-// for (var i = 0; i < elements.length; i++) {
-    //     elements[i].addEventListener('click', myFunction);
-// }
-// function myFunction() {
-//     var old_value = document.querySelector('.active');
-//     old_value.classList.remove('active');
-//     this.classList.add('active');
-//     // console.log(old_value);
-//     // console.log(elements);
-// }
-
+// navbar
 var elements = document.getElementsByClassName("none");
 var progress_bar_btn = document.querySelector('.progress-bar-btn')
 progress_bar_btn.style.transform = 'rotate(90deg) scaleY(4) scaleX(3) translateY(0px)';
@@ -27,36 +16,6 @@ function show_progress_bar() {
 
 }
 
-function show() {
-    window.onscroll = () => {
-        var stop = document.documentElement.scrollTop;
-        // console.log(stop);
-        if (stop < 200) {
-            var old_value = document.querySelector('.active');
-            var new_value = document.querySelector('.line-first');
-            old_value.classList.remove('active');
-            new_value.classList.add('active');
-        }
-        if (stop >= 200) {
-            var old_value = document.querySelector('.active');
-            var new_value = document.querySelector('.line-second');
-            old_value.classList.remove('active');
-            new_value.classList.add('active');
-        }
-        if (stop >= 700) {
-            var old_value = document.querySelector('.active');
-            var new_value = document.querySelector('.line-third');
-            old_value.classList.remove('active');
-            new_value.classList.add('active');
-        }
-        if (stop >= 1300) {
-            var old_value = document.querySelector('.active');
-            var new_value = document.querySelector('.line-fourth');
-            old_value.classList.remove('active');
-            new_value.classList.add('active');
-        }
-    }
-}
 var Lonclick = document.getElementById('hidden-menu');
 Lonclick.addEventListener('click', () => {
     console.log(document.documentElement.scrollWidth)
@@ -66,3 +25,26 @@ Lonclick.addEventListener('click', () => {
 
     }
 })
+
+// line
+const popularity = document.querySelector('#popularity');
+const decline = document.querySelector('#decline');
+const now = document.querySelector('#now');
+function ff_show() {
+    window.onscroll = () => {
+        // console.log(orgin.offsetTop…, orgin.offsetLeft);
+        var nowTop = document.documentElement.scrollTop + 300;
+
+        // console.log(nowTop);
+        if (nowTop > now.offsetTop) fs_updateLine('line-fourth');
+        else if (nowTop > decline.offsetTop) fs_updateLine('line-third');
+        else if (nowTop > popularity.offsetTop) fs_updateLine('line-second');
+        else if (nowTop > 0) fs_updateLine('line-first');
+
+
+        function fs_updateLine(Ltext) {
+            document.querySelector('.active').classList.remove('active');
+            document.querySelector(`.${Ltext}`).classList.add('active');
+        }
+    }
+}
