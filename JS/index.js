@@ -3,6 +3,7 @@ var elements = document.getElementsByClassName("none");
 var progress_bar_btn = document.querySelector('.progress-bar-btn')
 progress_bar_btn.style.transform = 'rotate(90deg) scaleY(4) scaleX(3) translateY(0px)';
 var hidden_menu = document.getElementById('hidden-menu');
+
 function show_progress_bar() {
     if (progress_bar_btn.style.transform == 'rotate(90deg) scaleY(4) scaleX(3) translateY(0px)') {
         progress_bar_btn.style.transform = 'rotate(-90deg) scaleY(4) scaleX(3) translateY(0.5px)';
@@ -18,7 +19,7 @@ function show_progress_bar() {
 
 var Lonclick = document.getElementById('hidden-menu');
 Lonclick.addEventListener('click', () => {
-    console.log(document.documentElement.scrollWidth)
+    // console.log(document.documentElement.scrollWidth)
     if (document.documentElement.scrollWidth <= 900) {
         hidden_menu.style.transform = 'scale(0)';
         progress_bar_btn.style.transform = 'rotate(90deg) scaleY(4) scaleX(3) translateY(0px)';
